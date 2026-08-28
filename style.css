@@ -19,3 +19,40 @@ img {
     width: 200px;
     height: 200px;
 }
+
+/* Variáveis de Cores - Modo Claro (Padrão) */
+:root {
+  --bg-body: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f9f9f9;
+}
+
+/* Variáveis de Cores - Modo Escuro */
+[data-theme="dark"] {
+  --bg-body: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+}
+
+/* Aplicação das Cores */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#themeToggleBtn {
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: inherit;
+  font-weight: bold;
+}
