@@ -1,12 +1,11 @@
-/* Variáveis de Cores - Modo Claro (Padrão) */
 :root {
-  --bg-body: #ffffff;
-  --bg-card: #f9f9f9;
+  --bg-body: #f4f4f4;
+  --bg-card: #ffffff;
   --text-color: #1a1a1a;
-  --header-bg: #e60000; /* Vermelho Furacão no modo claro */
+  --header-bg: #e60000; /* Vermelho Furacão */
   --header-text: #ffffff;
-  --btn-bg: #ffffff;
-  --btn-text: #1a1a1a;
+  --switch-bg: #ccc;
+  --switch-circle: #ffffff;
 }
 
 /* Variáveis de Cores - Modo Escuro */
@@ -14,20 +13,20 @@
   --bg-body: #121212;
   --bg-card: #1e1e1e;
   --text-color: #e0e0e0;
-  --header-bg: #000000; /* Preto no modo escuro */
+  --header-bg: #000000; /* Preto Furacão */
   --header-text: #ff3333;
-  --btn-bg: #1e1e1e;
-  --btn-text: #ffffff;
+  --switch-bg: #e60000;
+  --switch-circle: #ffffff;
 }
 
-/* Aplicação Global */
+/* Aplicação Global com Transição Suave */
 body {
   background-color: var(--bg-body);
   color: var(--text-color);
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 header {
@@ -38,7 +37,7 @@ header {
   margin: auto;
   padding: 16px;
   border-radius: 8px 8px 0 0;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 main {
@@ -48,7 +47,7 @@ main {
   margin: auto;
   padding: 16px;
   border-radius: 0 0 8px 8px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 img {
@@ -58,53 +57,89 @@ img {
   border-radius: 8px;
 }
 
+/* --- ESTILO DO BOTÃO TOGGLE SWITCH COM ANIMAÇÃO --- */
 .header-top {
   display: flex;
   justify-content: flex-end;
   padding-bottom: 10px;
 }
 
-#themeToggleBtn {
-  cursor: pointer;
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--header-text);
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-}
-  --bg-body: #ffffff;
-  --text-color: #222222;
-  --card-bg: #f9f9f9;
-}
-
-/* Variáveis de Cores - Modo Escuro */
-[data-theme="dark"] {
-  --bg-body: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: #1e1e1e;
-}
-
-/* Aplicação das Cores */
-body {
-  background-color: var(--bg-body);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.header-top {
+.theme-switch-wrapper {
   display: flex;
-  justify-content: flex-end;
-  padding: 10px;
+  align-items: center;
+  gap: 10px;
 }
 
-#themeToggleBtn {
-  cursor: pointer;
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  color: inherit;
+.switch-label {
+  font-size: 14px;
   font-weight: bold;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 26px;
+  position: relative;
+  width: 50px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--switch-bg);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: var(--switch-circle);
+  bottom: 3px;
+  content: "";
+  height: 20px;
+  left: 3px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--switch-bg);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Estilo do Botão de Curtir */
+.like-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#likeBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--header-bg);
+  color: #ffffff;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#likeBtn:active {
+  transform: scale(0.95);
+}
+
+#likeBtn.curtido {
+  background-color: #28a745;
 }
