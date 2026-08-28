@@ -9,6 +9,9 @@
 <body>
 
     <header>
+        <div class="header-top">
+            <button id="themeToggleBtn" onclick="alternarTema()">🌙 Modo Escuro</button>
+        </div>
         <h1>Mercado da Bola: A Nova Aposta do Furacão que Veio da MLS!</h1>
         <img src="https://i.postimg.cc/05WsFjZ9/kerwin-vargas.jpg" alt="Kerwin Vargas">
     </header>
@@ -32,6 +35,7 @@
     </main>
 
     <script>
+        // Lógica do Botão de Curtir
         let curtiu = false;
         let contador = 0;
 
@@ -50,6 +54,29 @@
             }
 
             countSpan.innerText = contador;
+        }
+
+        // Lógica do Modo Escuro / Claro
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const temaSalvo = localStorage.getItem('theme');
+
+        if (temaSalvo === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeBtn.innerText = '☀️ Modo Claro';
+        }
+
+        function alternarTema() {
+            const temaAtual = document.documentElement.getAttribute('data-theme');
+
+            if (temaAtual === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeBtn.innerText = '🌙 Modo Escuro';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeBtn.innerText = '☀️ Modo Claro';
+            }
         }
     </script>
 </body>
