@@ -185,3 +185,45 @@ input:checked + .slider:before {
 #likeBtn.curtido {
   background-color: #28a745;
 }
+
+/* Seção de referência */
+.referencia {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid var(--border-color, #ddd);
+}
+
+.referencia h2 {
+    margin-bottom: 20px;
+}
+
+.referencia-card {
+    background: var(--card-bg, #f5f5f5);
+    border-left: 5px solid #e30613;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.referencia-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.link-referencia {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 18px;
+    background-color: #e30613;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.link-referencia:hover {
+    background-color: #b8040e;
+    transform: translateY(-2px);
+}
+
