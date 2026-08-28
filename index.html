@@ -10,7 +10,13 @@
 
     <header>
         <div class="header-top">
-            <button id="themeToggleBtn" onclick="alternarTema()">🌙 Modo Escuro</button>
+            <div class="theme-switch-wrapper">
+                <span id="themeLabel" class="switch-label">☀️ Claro</span>
+                <label class="theme-switch" for="checkboxTema">
+                    <input type="checkbox" id="checkboxTema" onchange="alternarTema()" />
+                    <div class="slider"></div>
+                </label>
+            </div>
         </div>
         <h1>Mercado da Bola: A Nova Aposta do Furacão que Veio da MLS!</h1>
         <img src="https://i.postimg.cc/05WsFjZ9/kerwin-vargas.jpg" alt="Kerwin Vargas">
@@ -56,26 +62,26 @@
             countSpan.innerText = contador;
         }
 
-        // Lógica do Modo Escuro / Claro
-        const themeBtn = document.getElementById('themeToggleBtn');
+        // Lógica do Botão de Transição do Modo Escuro / Claro
+        const checkboxTema = document.getElementById('checkboxTema');
+        const themeLabel = document.getElementById('themeLabel');
         const temaSalvo = localStorage.getItem('theme');
 
         if (temaSalvo === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            themeBtn.innerText = '☀️ Modo Claro';
+            checkboxTema.checked = true;
+            themeLabel.innerText = '🌙 Escuro';
         }
 
         function alternarTema() {
-            const temaAtual = document.documentElement.getAttribute('data-theme');
-
-            if (temaAtual === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeBtn.innerText = '🌙 Modo Escuro';
-            } else {
+            if (checkboxTema.checked) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeBtn.innerText = '☀️ Modo Claro';
+                themeLabel.innerText = '🌙 Escuro';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeLabel.innerText = '☀️ Claro';
             }
         }
     </script>
