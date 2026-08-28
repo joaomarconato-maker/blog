@@ -1,27 +1,79 @@
+/* Variáveis de Cores - Modo Claro (Padrão) */
+:root {
+  --bg-body: #ffffff;
+  --bg-card: #f9f9f9;
+  --text-color: #1a1a1a;
+  --header-bg: #e60000; /* Vermelho Furacão no modo claro */
+  --header-text: #ffffff;
+  --btn-bg: #ffffff;
+  --btn-text: #1a1a1a;
+}
+
+/* Variáveis de Cores - Modo Escuro */
+[data-theme="dark"] {
+  --bg-body: #121212;
+  --bg-card: #1e1e1e;
+  --text-color: #e0e0e0;
+  --header-bg: #000000; /* Preto no modo escuro */
+  --header-text: #ff3333;
+  --btn-bg: #1e1e1e;
+  --btn-text: #ffffff;
+}
+
+/* Aplicação Global */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 header {
-    background-color: black;
-    color: red;
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-    padding: 16px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 main {
-    background-color: black;
-    color: red;
-    max-width: 800px;
-    margin: auto;
-    padding: 16px;
+  background-color: var(--bg-card);
+  color: var(--text-color);
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 img {
-    width: 200px;
-    height: 200px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
 }
 
-/* Variáveis de Cores - Modo Claro (Padrão) */
-:root {
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+#themeToggleBtn {
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--header-text);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
   --bg-body: #ffffff;
   --text-color: #222222;
   --card-bg: #f9f9f9;
