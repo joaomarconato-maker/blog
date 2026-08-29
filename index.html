@@ -10,24 +10,42 @@
 <body>
 
     <header>
+
         <div class="header-top">
+
             <div class="theme-switch-wrapper">
-                <span id="themeLabel" class="switch-label">☀️ Claro</span>
+
+                <span id="themeLabel" class="switch-label">
+                    ☀️ Claro
+                </span>
 
                 <label class="theme-switch" for="checkboxTema">
-                    <input type="checkbox" id="checkboxTema" onchange="alternarTema()" />
+
+                    <input 
+                        type="checkbox" 
+                        id="checkboxTema"
+                        onchange="alternarTema()"
+                    >
+
                     <div class="slider"></div>
+
                 </label>
+
             </div>
+
         </div>
 
-        <h1>Mercado da Bola: A Nova Aposta do Furacão que Veio da MLS!</h1>
+        <h1>
+            Mercado da Bola: A Nova Aposta do Furacão que Veio da MLS!
+        </h1>
 
         <img 
-            src="https://i.postimg.cc/05WsFjZ9/kerwin-vargas.jpg" 
+            src="https://i.postimg.cc/05WsFjZ9/kerwin-vargas.jpg"
             alt="Kerwin Vargas"
         >
+
     </header>
+
 
     <main>
 
@@ -42,7 +60,10 @@
             técnico Odair Hellmann nesta sequência decisiva da temporada.
         </p>
 
-        <h2>O que o Colombiano Traz para o Elenco de Odair Hellmann</h2>
+
+        <h2>
+            O que o Colombiano Traz para o Elenco de Odair Hellmann
+        </h2>
 
         <p>
             A busca por atacantes de velocidade virou a prioridade absoluta no CT do
@@ -54,6 +75,7 @@
             na chegada à linha de fundo para municiar a grande área.
         </p>
 
+
         <p>
             Na última temporada nos Estados Unidos, o atacante viveu o melhor momento
             da sua carreira, marcando oito gols e distribuindo quatro assistências,
@@ -61,7 +83,10 @@
             comissão técnica tanto buscava para o esquema tático rubro-negro.
         </p>
 
-        <h3>O que essa contratação pode mostrar aos torcedores?</h3>
+
+        <h3>
+            O que essa contratação pode mostrar aos torcedores?
+        </h3>
 
         <p>
             A contratação de Kerwin Vargas mostra o quanto o Athletico está atento
@@ -72,6 +97,7 @@
             do Furacão.
         </p>
 
+
         <p>
             Agora, a expectativa fica por conta da regularização e dos treinos para
             ver como ele vai se encaixar com as outras novidades do elenco. Se o
@@ -79,7 +105,9 @@
             atleticana tem grandes motivos para se empolgar com o novo reforço.
         </p>
 
+
         <!-- CONCLUSÃO -->
+
         <p>
             Se gostou do nosso blog de hoje, curta nosso post e siga nossa página!
             Até a próxima!
@@ -87,9 +115,12 @@
 
 
         <!-- FONTE E REFERÊNCIA -->
+
         <section class="referencia">
 
-            <h2>🔗 Fonte e Referência</h2>
+            <h2>
+                🔗 Fonte e Referência
+            </h2>
 
             <div class="referencia-card">
 
@@ -114,7 +145,7 @@
                     pertencia ao Charlotte FC, da Major League Soccer (MLS).
                 </p>
 
-                <a 
+                <a
                     href="https://ge.globo.com/pr/futebol/times/athletico-pr/noticia/2026/07/06/athletico-negocia-com-atacante-colombiano-kerwin-vargas-do-charlotte-fc.ghtml"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,6 +160,7 @@
 
 
         <!-- BOTÃO DE CURTIR -->
+
         <div class="like-container">
 
             <button id="likeBtn" onclick="curtir()">
@@ -140,5 +172,71 @@
     </main>
 
 
+    <!-- JAVASCRIPT -->
+
     <script>
 
+        // FUNÇÃO PARA ALTERNAR ENTRE MODO CLARO E ESCURO
+
+        function alternarTema() {
+
+            const checkbox = document.getElementById("checkboxTema");
+            const body = document.body;
+            const themeLabel = document.getElementById("themeLabel");
+
+            if (checkbox.checked) {
+
+                // Ativa o modo escuro
+                body.setAttribute("data-theme", "dark");
+
+                // Muda o texto do botão
+                themeLabel.textContent = "🌙 Escuro";
+
+            } else {
+
+                // Ativa o modo claro
+                body.setAttribute("data-theme", "light");
+
+                // Muda o texto do botão
+                themeLabel.textContent = "☀️ Claro";
+
+            }
+
+        }
+
+
+        // FUNÇÃO DO BOTÃO DE CURTIR
+
+        function curtir() {
+
+            const likeCount = document.getElementById("likeCount");
+            const likeBtn = document.getElementById("likeBtn");
+
+            let contador = parseInt(likeCount.textContent);
+
+
+            if (likeBtn.classList.contains("curtido")) {
+
+                // Remove a curtida
+                contador--;
+
+                likeBtn.classList.remove("curtido");
+
+            } else {
+
+                // Adiciona a curtida
+                contador++;
+
+                likeBtn.classList.add("curtido");
+
+            }
+
+
+            likeCount.textContent = contador;
+
+        }
+
+    </script>
+
+</body>
+</html>
