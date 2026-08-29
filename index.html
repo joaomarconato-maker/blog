@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mercado da Bola - Furacão</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
     <header>
 
@@ -19,15 +26,11 @@
                     ☀️ Claro
                 </span>
 
-                <label class="theme-switch" for="checkboxTema">
+                <label class="theme-switch">
 
-                    <input 
-                        type="checkbox" 
-                        id="checkboxTema"
-                        onchange="alternarTema()"
-                    >
+                    <input type="checkbox" id="checkboxTema">
 
-                    <div class="slider"></div>
+                    <span class="slider"></span>
 
                 </label>
 
@@ -35,17 +38,23 @@
 
         </div>
 
+
         <h1>
             Mercado da Bola: A Nova Aposta do Furacão que Veio da MLS!
         </h1>
 
-        <img 
+
+        <img
             src="https://i.postimg.cc/05WsFjZ9/kerwin-vargas.jpg"
             alt="Kerwin Vargas"
         >
 
     </header>
 
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
 
     <main>
 
@@ -64,6 +73,7 @@
         <h2>
             O que o Colombiano Traz para o Elenco de Odair Hellmann
         </h2>
+
 
         <p>
             A busca por atacantes de velocidade virou a prioridade absoluta no CT do
@@ -88,6 +98,7 @@
             O que essa contratação pode mostrar aos torcedores?
         </h3>
 
+
         <p>
             A contratação de Kerwin Vargas mostra o quanto o Athletico está atento
             ao mercado internacional para manter o time competitivo no topo das
@@ -106,7 +117,9 @@
         </p>
 
 
-        <!-- CONCLUSÃO -->
+        <!-- =========================
+             CONCLUSÃO
+        ========================== -->
 
         <p>
             Se gostou do nosso blog de hoje, curta nosso post e siga nossa página!
@@ -114,7 +127,9 @@
         </p>
 
 
-        <!-- FONTE E REFERÊNCIA -->
+        <!-- =========================
+             FONTE E REFERÊNCIA
+        ========================== -->
 
         <section class="referencia">
 
@@ -122,15 +137,18 @@
                 🔗 Fonte e Referência
             </h2>
 
+
             <div class="referencia-card">
 
                 <p>
                     <strong>Site:</strong> GE Globo
                 </p>
 
+
                 <p>
                     <strong>Autora:</strong> Nadja Mauad
                 </p>
+
 
                 <p>
                     <strong>Título:</strong>
@@ -138,12 +156,14 @@
                     do Charlotte FC
                 </p>
 
+
                 <p>
                     <strong>Sobre a fonte:</strong>
                     A matéria publicada pelo GE Globo aborda a negociação do
                     Athletico com o atacante colombiano Kerwin Vargas, que
                     pertencia ao Charlotte FC, da Major League Soccer (MLS).
                 </p>
+
 
                 <a
                     href="https://ge.globo.com/pr/futebol/times/athletico-pr/noticia/2026/07/06/athletico-negocia-com-atacante-colombiano-kerwin-vargas-do-charlotte-fc.ghtml"
@@ -159,12 +179,17 @@
         </section>
 
 
-        <!-- BOTÃO DE CURTIR -->
+        <!-- =========================
+             BOTÃO DE CURTIR
+        ========================== -->
 
         <div class="like-container">
 
-            <button id="likeBtn" onclick="curtir()">
-                ❤️ Curtir (<span id="likeCount">0</span>)
+            <button id="likeBtn">
+
+                ❤️ Curtir
+                (<span id="likeCount">0</span>)
+
             </button>
 
         </div>
@@ -172,71 +197,74 @@
     </main>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
-        // FUNÇÃO PARA ALTERNAR ENTRE MODO CLARO E ESCURO
+        /* =================================
+           MODO CLARO / MODO ESCURO
+        ================================= */
 
-        function alternarTema() {
+        const checkboxTema = document.getElementById("checkboxTema");
+        const themeLabel = document.getElementById("themeLabel");
 
-            const checkbox = document.getElementById("checkboxTema");
-            const body = document.body;
-            const themeLabel = document.getElementById("themeLabel");
 
-            if (checkbox.checked) {
+        checkboxTema.addEventListener("change", function () {
 
-                // Ativa o modo escuro
-                body.setAttribute("data-theme", "dark");
+            if (checkboxTema.checked) {
 
-                // Muda o texto do botão
+                // MODO ESCURO
+                document.body.setAttribute("data-theme", "dark");
+
                 themeLabel.textContent = "🌙 Escuro";
 
             } else {
 
-                // Ativa o modo claro
-                body.setAttribute("data-theme", "light");
+                // MODO CLARO
+                document.body.setAttribute("data-theme", "light");
 
-                // Muda o texto do botão
                 themeLabel.textContent = "☀️ Claro";
 
             }
 
-        }
+        });
 
 
-        // FUNÇÃO DO BOTÃO DE CURTIR
+        /* =================================
+           BOTÃO DE CURTIR
+        ================================= */
 
-        function curtir() {
+        const likeBtn = document.getElementById("likeBtn");
+        const likeCount = document.getElementById("likeCount");
 
-            const likeCount = document.getElementById("likeCount");
-            const likeBtn = document.getElementById("likeBtn");
+        let contadorCurtidas = 0;
 
-            let contador = parseInt(likeCount.textContent);
 
+        likeBtn.addEventListener("click", function () {
 
             if (likeBtn.classList.contains("curtido")) {
 
-                // Remove a curtida
-                contador--;
+                contadorCurtidas--;
 
                 likeBtn.classList.remove("curtido");
 
             } else {
 
-                // Adiciona a curtida
-                contador++;
+                contadorCurtidas++;
 
                 likeBtn.classList.add("curtido");
 
             }
 
 
-            likeCount.textContent = contador;
+            likeCount.textContent = contadorCurtidas;
 
-        }
+        });
 
     </script>
 
 </body>
+
 </html>
