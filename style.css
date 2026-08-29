@@ -1,229 +1,545 @@
-/* Variáveis de Cores - Modo Claro (Padrão) */
+  /* =========================================================
+   VARIÁVEIS - MODO CLARO
+   ========================================================= */
+
 :root {
-  --bg-body: #e9ecef;
-  --bg-card: #ffffff;
-  --text-color: #1a1a1a;
-  --header-bg: #e60000; /* Vermelho Furacão */
-  --header-text: #ffffff;
-  --switch-bg: #ccc;
-  --switch-circle: #ffffff;
-  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante no modo claro */
+
+    --bg-body: #e9ecef;
+
+    --bg-card: #ffffff;
+
+    --text-color: #1a1a1a;
+
+    --header-bg: #e60000;
+
+    --header-text: #ffffff;
+
+    --switch-bg: #cccccc;
+
+    --switch-circle: #ffffff;
+
+    --border-color: #dddddd;
+
+    --card-bg: #f5f5f5;
+
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
 }
 
-/* Variáveis de Cores - Modo Escuro */
+
+/* =========================================================
+   VARIÁVEIS - MODO ESCURO
+   ========================================================= */
+
 [data-theme="dark"] {
-  --bg-body: #121212;
-  --bg-card: #1e1e1e;
-  --text-color: #e0e0e0;
-  --header-bg: #000000; /* Preto Furacão */
-  --header-text: #ff3333;
-  --switch-bg: #e60000;
-  --switch-circle: #ffffff;
-  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7); /* Sombra mais profunda no modo escuro */
+
+    --bg-body: #121212;
+
+    --bg-card: #1e1e1e;
+
+    --text-color: #e0e0e0;
+
+    --header-bg: #000000;
+
+    --header-text: #ff3333;
+
+    --switch-bg: #e60000;
+
+    --switch-circle: #ffffff;
+
+    --border-color: #444444;
+
+    --card-bg: #292929;
+
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+
 }
 
-/* Aplicação Global e Alinhamento do Fundo */
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
 body {
-  background-color: var(--bg-body);
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 40px 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza o bloco na página */
-  min-height: 100vh;
-  box-sizing: border-box;
-  transition: background-color 0.4s ease, color 0.4s ease;
+
+    background-color: var(--bg-body);
+
+    color: var(--text-color);
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 40px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+
 }
 
-/* Header com Sombra na Caixa */
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 header {
-  background-color: var(--header-bg);
-  color: var(--header-text);
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-  padding: 24px;
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--box-shadow);
-  box-sizing: border-box;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+
+    background-color: var(--header-bg);
+
+    color: var(--header-text);
+
+    text-align: center;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    padding: 24px;
+
+    border-radius: 12px 12px 0 0;
+
+    box-shadow: var(--box-shadow);
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
+
 }
+
 
 header h1 {
-  margin: 15px 0 20px 0;
-  font-size: 1.8rem;
-  line-height: 1.3;
+
+    margin: 15px 0 20px 0;
+
+    font-size: 1.8rem;
+
+    line-height: 1.3;
+
 }
 
-/* Centralização e Tamanho Ampliado da Imagem */
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
 img {
-  display: block;
-  margin: 20px auto 0 auto;
-  width: 100%;
-  max-width: 650px; /* Aumentado para a foto ficar em destaque */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    display: block;
+
+    margin: 20px auto 0 auto;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    height: auto;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4);
+
 }
 
-/* Main Alinhado com Leitura Confortável */
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
 main {
-  background-color: var(--bg-card);
-  color: var(--text-color);
-  width: 100%;
-  max-width: 800px;
-  padding: 32px;
-  border-radius: 0 0 12px 12px;
-  box-shadow: var(--box-shadow);
-  box-sizing: border-box;
-  text-align: left;
-  line-height: 1.6;
-  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+
+    background-color: var(--bg-card);
+
+    color: var(--text-color);
+
+    width: 100%;
+
+    max-width: 800px;
+
+    padding: 32px;
+
+    border-radius: 0 0 12px 12px;
+
+    box-shadow: var(--box-shadow);
+
+    text-align: left;
+
+    line-height: 1.6;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
+
 }
 
-main h2, main h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
+
+main h2,
+main h3 {
+
+    margin-top: 24px;
+
+    margin-bottom: 12px;
+
 }
+
 
 main p {
-  margin-bottom: 18px;
+
+    margin-bottom: 18px;
+
 }
 
-/* --- ESTILO DO BOTÃO TOGGLE SWITCH COM ANIMAÇÃO --- */
+
+/* =========================================================
+   ÁREA DO BOTÃO DE TEMA
+   ========================================================= */
+
 .header-top {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 10px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding-bottom: 10px;
+
 }
+
 
 .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
 }
+
 
 .switch-label {
-  font-size: 14px;
-  font-weight: bold;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
 }
+
+
+/* =========================================================
+   TOGGLE SWITCH
+   ========================================================= */
 
 .theme-switch {
-  display: inline-block;
-  height: 26px;
-  position: relative;
-  width: 50px;
+
+    display: inline-block;
+
+    height: 26px;
+
+    position: relative;
+
+    width: 50px;
+
 }
+
+
+/* Esconde o checkbox original */
 
 .theme-switch input {
-  display: none;
+
+    display: none;
+
 }
+
+
+/* Fundo do botão */
 
 .slider {
-  background-color: var(--switch-bg);
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-  border-radius: 34px;
+
+    background-color: var(--switch-bg);
+
+    bottom: 0;
+
+    cursor: pointer;
+
+    left: 0;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    transition: 0.4s;
+
+    border-radius: 34px;
+
 }
+
+
+/* Bolinha do botão */
 
 .slider:before {
-  background-color: var(--switch-circle);
-  bottom: 3px;
-  content: "";
-  height: 20px;
-  left: 3px;
-  position: absolute;
-  transition: 0.4s;
-  width: 20px;
-  border-radius: 50%;
+
+    background-color: var(--switch-circle);
+
+    bottom: 3px;
+
+    content: "";
+
+    height: 20px;
+
+    left: 3px;
+
+    position: absolute;
+
+    transition: 0.4s;
+
+    width: 20px;
+
+    border-radius: 50%;
+
 }
+
+
+/* Quando o botão está ativado */
 
 input:checked + .slider {
-  background-color: var(--switch-bg);
+
+    background-color: var(--switch-bg);
+
 }
+
+
+/* Move a bolinha para a direita */
 
 input:checked + .slider:before {
-  transform: translateX(24px);
+
+    transform: translateX(24px);
+
 }
 
-/* Estilo do Botão de Curtir com Sombra */
-.like-container {
-  margin-top: 30px;
-  text-align: center;
-}
 
-#likeBtn {
-  padding: 12px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  background-color: var(--header-bg);
-  color: #ffffff;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
-}
+/* =========================================================
+   SEÇÃO DE REFERÊNCIA
+   ========================================================= */
 
-#likeBtn:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-#likeBtn:active {
-  transform: scale(0.95);
-}
-
-#likeBtn.curtido {
-  background-color: #28a745;
-}
-
-/* Seção de referência */
 .referencia {
+
     margin-top: 40px;
+
     padding-top: 25px;
-    border-top: 2px solid var(--border-color, #ddd);
+
+    border-top:
+        2px solid var(--border-color);
+
 }
+
 
 .referencia h2 {
+
     margin-bottom: 20px;
+
 }
+
 
 .referencia-card {
-    background: var(--card-bg, #f5f5f5);
-    border-left: 5px solid #e30613;
+
+    background-color: var(--card-bg);
+
+    border-left:
+        5px solid #e30613;
+
     border-radius: 10px;
+
     padding: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+
 }
+
 
 .referencia-card p {
+
     margin: 10px 0;
+
     line-height: 1.6;
+
 }
+
+
+/* =========================================================
+   LINK DA REFERÊNCIA
+   ========================================================= */
 
 .link-referencia {
+
     display: inline-block;
+
     margin-top: 15px;
+
     padding: 12px 18px;
+
     background-color: #e30613;
+
     color: white;
+
     text-decoration: none;
+
     border-radius: 8px;
+
     font-weight: bold;
-    transition: 0.3s;
+
+    transition:
+        0.3s;
+
 }
+
 
 .link-referencia:hover {
+
     background-color: #b8040e;
+
     transform: translateY(-2px);
+
 }
 
+
+/* =========================================================
+   BOTÃO DE CURTIR
+   ========================================================= */
+
+.like-container {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+
+#likeBtn {
+
+    padding: 12px 28px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background-color: var(--header-bg);
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.3s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+#likeBtn:hover {
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.3);
+
+}
+
+
+#likeBtn:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* Botão depois de curtido */
+
+#likeBtn.curtido {
+
+    background-color: #28a745;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE PARA CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 20px 10px;
+
+    }
+
+
+    header {
+
+        padding: 20px;
+
+    }
+
+
+    header h1 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    main {
+
+        padding: 22px;
+
+    }
+
+
+    .header-top {
+
+        justify-content: center;
+
+    }
+
+
+    .theme-switch-wrapper {
+
+        justify-content: center;
+
+    }
+
+}
